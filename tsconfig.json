@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "es6", // use ES2015 modules
+    "target": "es2017", // compile to ES2015 (Babel will do the rest)
+    "allowSyntheticDefaultImports": true, // see below
+    "baseUrl": "src", // enables you to import relative to this folder
+    "sourceMap": true, // make TypeScript generate sourcemaps
+    "outDir": "ts-build", // output directory to build to (irrelevant because we use Webpack most of the time)
+    "jsx": "react",
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "noStrictGenericChecks": true // found this issue: 'https://github.com/DefinitelyTyped/DefinitelyTyped/issues/17652'
+  },
+  "exclude": [
+    "node_modules" // don't run on any code in the node_modules directory
+  ]
+}
+
+// enable JSX mode, but "preserve" tells TypeScript to not transform it (we'll use Babel)
+// changed it to 'react' because the test didn't use babel
